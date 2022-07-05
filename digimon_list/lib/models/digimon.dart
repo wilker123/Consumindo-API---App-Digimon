@@ -12,10 +12,10 @@ class Digimon {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['name'] = this.name;
-    data['img'] = this.img;
-    data['level'] = this.level;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['img'] = img;
+    data['level'] = level;
     return data;
   }
 }

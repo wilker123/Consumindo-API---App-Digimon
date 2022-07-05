@@ -35,9 +35,9 @@ class _HomePageState extends State<HomePage> {
               itemCount: data.length,
               itemBuilder: (context, index) {
                 return DigimonCard(
-                  name_digimon: data[index].name as String,
-                  image_digimon: data[index].img as String,
-                  level_digimon: data[index].level as String,
+                  nameDigimon: data[index].name as String,
+                  imageDigimon: data[index].img as String,
+                  levelDigimon: data[index].level as String,
                 );
               },
             );

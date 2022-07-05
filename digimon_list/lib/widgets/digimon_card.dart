@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class DigimonCard extends StatelessWidget {
   const DigimonCard({
     Key? key,
-    required this.name_digimon,
-    required this.image_digimon,
-    required this.level_digimon,
+    required this.nameDigimon,
+    required this.imageDigimon,
+    required this.levelDigimon,
   }) : super(key: key);
 
-  final String name_digimon;
-  final String image_digimon;
-  final String level_digimon;
+  final String nameDigimon;
+  final String imageDigimon;
+  final String levelDigimon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class DigimonCard extends StatelessWidget {
       width: double.infinity,
       child: GestureDetector(
         onTap: () {
-          final snackBar = SnackBar(content: Text(name_digimon));
+          final snackBar = SnackBar(content: Text(nameDigimon));
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
@@ -31,7 +31,7 @@ class DigimonCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: SizedBox(
-                    child: Image.network(image_digimon),
+                    child: Image.network(imageDigimon),
                   ),
                 ),
                 Expanded(
@@ -39,10 +39,10 @@ class DigimonCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        name_digimon,
+                        nameDigimon,
                         style: const TextStyle(fontSize: 20),
                       ),
-                      Text(level_digimon),
+                      Text(levelDigimon),
                     ],
                   ),
                 )
