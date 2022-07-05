@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+
+import 'services/digimon_service.dart';
+
+void setLocator() {
+  GetIt.instance.registerLazySingleton(() => DigimonService());
+}
 
 void main() {
+  setLocator();
   runApp(const MyApp());
 }
 
