@@ -1,3 +1,4 @@
+import 'package:digimon_list/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -22,7 +23,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text("Home Page"),
+          ),
+          body: HomePage(),
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:digimon_list/services/digimon_service.dart';
+import 'package:digimon_list/widgets/digimon_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -23,6 +24,29 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container(
+      color: Colors.white10,
+      child: FutureBuilder<List<Digimon>?>(
+        future: futureDigimon,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<Digimon> data = snapshot.data!;
+            return ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (context, index) {
+                return DigimonCard(
+                  name_digimon: data[index].name as String,
+                  image_digimon: data[index].img as String,
+                  level_digimon: data[index].level as String,
+                );
+              },
+            );
+          } else if (snapshot.hasError) {
+            return Text("${snapshot.error}");
+          }
+          return const CircularProgressIndicator();
+        },
+      ),
+    );
   }
 }
